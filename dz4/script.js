@@ -121,7 +121,7 @@ console.log('---');
 
 arr6.sort(function(a, b) {
     return a - b;
-});
+});q
 
 console.log(arr6);
 
