@@ -121,7 +121,7 @@ console.log('---');
 
 arr6.sort(function(a, b) {
     return a - b;
-});q
+})
 
 console.log(arr6);
 
@@ -188,24 +188,43 @@ console.log(sum)
 
 console.log(' Task 11 --------');
 
+{
+let h = prompt('Высота треугольника'),
+    line = '';
 
-// НЕ ДОРЕШАЛ!!!!!!!!!!!
+for (let i = 1; i <= h; i++) {
+    for (let j = 1; j <= (h - i); j++) {
+        line += ' ';
+    }
 
+    for (let j = 1; j <= ((i * 2) - 1); j++) {
+        line += '^';
+    }
 
-// let a = '^',
-//     b = ' ';
+    console.log(line);
+    line = '';
+}
 
-// let high = prompt('Высота треугольника');
+// let sumArr = [];
 
-// if (high != 0 && high != ' ') {
-//     for (let i = 0; i <= high; i++) {
-//         for (; a <= high; a+=2) i += a;
-//         for (let b = high - 1; b > 0; b--) i += b;
+// for (let i = 0; i < 5; i++) {
+//     let arr = [];
+//     for (let j = 0; j < 5-i; j++) {
+//         arr.push(' ');
 //     }
+//     arr = arr.join(' ');
+
+//     let arr2 = [];
+//     for (let j = 0; j < 2*i+1; j++) {
+//         arr2.push('^');
+//     }
+//     arr2 = arr2.join(' ');
+
+//     sumArr = arr.concat(arr2);
+//     console.log(sumArr);
+//     document.write('<pre>' + sumArr + '</pre>')
 // }
-
-// document.write(a)
-
+}
 /*Для ввода значений можете использовать ф-цию prompt(), либо задавать значения при
 инициализации переменных в коде.
 Для вывода результатов скриптов вы можете использовать функции: alert() для вывода
