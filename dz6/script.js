@@ -116,7 +116,7 @@ const checkReg = function(str) {
 	return strR;
 };
 
-console.log(checkReg('aa aba abba abbba abca abea aba'));
+document.write(checkReg('aa aba abba abbba abca abea'));
 }
 
 /*8. Напишите ф-цию строгой проверки ввода номер телефона в
@@ -125,12 +125,12 @@ console.log(checkReg('aa aba abba abbba abca abea aba'));
 регулярные выражения.*/
 
 const checkNumber = function(num) {
-	let regexp = /(^\+375|\+380|\+370|\+371|\+48|\+7)[\d]{2,4}[\d]{7}$/g;
-	if (!regexp.test(num)) return false;
-	else return true;
+	let regexp = /^\+375 ?\(?(29|44|33|17|25)\)? ?[1-9][0-9]{2}[ -]?[0-9]{2}[ -]?[0-9]{2}$/gm;
+	if (!regexp.test(num)) return alert('Неверно!');
+	else return alert('Спасибо!');
 };
 
-console.log(checkNumber('+375291111111'));
+checkNumber(num = prompt('Введите номер телефона', '+375291111111'));
 
 /*9. Напишите ф-цию строгой проверки адреса эл. почты с учетом следующих
 условия:
@@ -146,12 +146,12 @@ console.log(checkNumber('+375291111111'));
 выражения.*/
 
 const checkEmail = function(email) {
-	let regexp = /^[\d\w]{2,}@[\w]{2,}\.[\w]{2,11}$/gi;
-	if (!regexp.test(email)) return false;
-	else return true;
+	let regexp = /^[a-z0-9]+[\.\-_]?[a-z0-9]+@[a-z0-9]+[\.\-_]?[a-z0-9]+\.[a-z]{2,11}$/gmi;
+	if (regexp.test(email) == true) return alert('Ok');
+	else return alert('Wrong!');
 };
 
-console.log(checkEmail('0hh@gmail.com'));
+checkEmail(email = prompt('Введите адрес электронной почты', 'alex_98@gmail.com'));
 
 /*10. Напишите ф-цию, которая из полного адреса с параметрами и без,
 например: https://tech.onliner.by/2018/04/26/smart-do-200/?
@@ -160,9 +160,17 @@ utm_source=main_tile&utm_medium=smartdo200#zag3 , получит адрес
 параметров (/2018/04/26/smart-do-200/), параметры
 (utm_source=main_tile&utm_medium=smartdo200) и хеш (#zag3). В адресе
 может и не быть каких-либо составляющих. Ф-ция должна возвращать
-массив.
+массив.*/
 
-* Для быстрого составления регулярного выражения и проверки исп. онлайн-
+let printAddress = [];
+
+const checkAddress = (link => {
+	return printAddress.concat(link.match(/(https?:\/\/[a-z0-9]+(?:-|\.)?[a-z0-9]+\.[a-z]{2,11})/gm), link.match(/\/[^\?\.\s#]+\//gm), link.match(/(\?[^\s#]+)/gm), link.match(/(#[a-z0-9]+)/gm));
+});
+
+console.log(checkAddress(`https://tech.onliner.by/2018/04/26/smart-do-200/?utm_source=main_tile&utm_medium=smartdo200#zag3`));
+
+/** Для быстрого составления регулярного выражения и проверки исп. онлайн-
 сервис https://regex101.com/.
 
 Для ввода значений можете использовать ф-цию prompt(), либо задавать
