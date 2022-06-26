@@ -27,12 +27,12 @@ let Auto = function() {
     this.characteristics = function() {
         this.brand = prompt('brand');
         this.model = prompt('model');
-        this.power = confirm(`Let's GO?`, 'YES/NO');
+        this.power = confirm(`Let's GO? Start / Not`);
 
         if (this.power == true) {
-            this.direction = prompt('direction', 'straight, back, neutral');
-            this.speed = +prompt('speed');
-            this.time = +prompt('time');
+            this.direction = prompt('direction', 'forward, backward, neutral');
+            this.speed = +prompt('Enter speed');
+            this.time = +prompt('How minutes on the way?');
         } else {
             alert('Please, start the car!');
         };
@@ -44,12 +44,12 @@ let Auto = function() {
 
     this.operation = function() {
         switch(this.direction) {
-            case 'straight':
-            case 'back':
+            case 'forward':
+            case 'backward':
                 this.distance = (this.speed / 60) * this.time;
             break;
             case 'neutral':
-                alert('Включите передачу!');
+                alert('Turn on the transmission, please!');
             break;
         };
         
@@ -58,9 +58,11 @@ let Auto = function() {
     }
 
     this.show = function() {
-        console.log(this.distance);
+        console.log('If ' + this.brand + ' ' + this.model + ' will moves ' + this.direction + ' at a speed ' + this.speed + 'km/h, then in ' + this.time + ' minutes it will travel ' + this.distance + ' km');
     };
 };
 
 let auto = new Auto();
 auto.characteristics();
+
+console.log(auto);
