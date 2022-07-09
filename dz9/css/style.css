@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #777777;
+}
+
+.app {
+    width: 50%;
+    margin-top: 100px ;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #c3c1c1;
+}
+
+header {
+    padding: 30px 50px;
+    background-color: aqua;
+    box-shadow: 0 10px 20px #ecebeb;
+}
+
+h1 {
+    color: #fff;
+}
+
+.app__tasks_input {
+    margin: 10px 0;
+    width: 90%;
+    padding: 10px 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.listTasks {
+
+}
+
+.listTasks__li {
+    
+}
+
+.listTasks__label {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.listTasks__span {
+    /* color: #ededed; */
+}
+
+.span {
+    color: #f34646;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.input2 {
+    border: 0;
+    background-color: rgb(233, 250, 253);
+    outline: none;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.buttonDel {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px 30px;
+    background-color: rgb(232, 246, 171);
+    border: 1.5px solid rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
