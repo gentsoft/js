@@ -1,6 +1,5 @@
 let input = document.querySelector('input');
-input.setAttribute('value', '0')
-console.log(input)
+input.setAttribute('value', '0');
 
 let num = '';
 let num2 = '';
@@ -29,7 +28,6 @@ const calc = function() {
             num = input.value;
             num = +num;
             
-            console.log(num);
             return;
         } else {
             if (input.value == '0') input.value = '';
@@ -39,7 +37,6 @@ const calc = function() {
             num2 = input.value;
             num2 = +num2;
             
-            console.log(num2);
             return;
         }
     };
@@ -56,24 +53,21 @@ const calc = function() {
     perсent.addEventListener('click', getPerсent);
 
 
-    const getPlusMinusChange = function() {
-        if (num) {
+    const getPlusMinusReplace = function() {
+        if (!sign) {
             num = -num;
             input.value = num;
-            return;
-        } else if (num2) {
+        } else {
             num2 = -num2;
             input.value = num2;
-            return;    //  !!! зараза, не работает :(
         }
-    }
-    plusMinusSign.addEventListener('click', getPlusMinusChange)
+    };
+    plusMinusSign.addEventListener('click', getPlusMinusReplace)
 
 
     const getSign = function() {
         input.value = '0';
         sign = this.innerHTML;
-        console.log(sign);
         return;
     };
     add.addEventListener('click', getSign);
@@ -105,7 +99,7 @@ const calc = function() {
                 num = num / num2;
                 showResult();
             break;
-        }
+        };
     };
     resultSign.addEventListener('click', operation);
 
@@ -123,4 +117,3 @@ const calc = function() {
 }
 
 calc();
-    
