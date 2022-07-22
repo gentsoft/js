@@ -1,75 +1,46 @@
 const filter = function() {
 
-    const main = document.getElementById("portfolio");
-    console.log(main)
-    const filter = main.getElementsByClassName("portfolio__filter");
-    
-    let btns,
-        btn;
+    const portfolio = document.querySelector("#portfolio");
+    console.log(portfolio)
+    const portfolioFilters = portfolio.querySelectorAll(".portfolio__filter li");
 
-    for (let i = 0; i < filter.length; i++) {
-        btns = filter[i];
-        let li = btns.children;
-        console.log(li);
-        for (let i = 0; i < li.length; i++) {    
-            btn = li[i];
-            btn.addEventListener('click', function() {
+    const portfolioList = portfolio.querySelectorAll(".portfolio__list li");
 
-                for (let i = 0; i < li.length; i++) {
-                    li[i].classList.remove('active');
-                }             
+    portfolioFilters.forEach(function(elems) {
+        if (!elems) return;
 
-                this.classList.add('active');
-                
-                if (this.dataset.filter == "sites") {
-                    showSites();
-                } else if (this.dataset.filter == "logo") {
-                    showLogo();
-                } else if (this.dataset.filter == "design") {
-                    showDesign();
-                } else {
-                    showAll();
+        elems.addEventListener('click', function() {
+
+            let data = elems.dataset.filter;
+            console.log(data)
+
+            portfolioFilters.forEach(function(elem) {
+                elem.classList.remove('active');
+            });
+
+            this.classList.add('active');
+            
+
+            portfolioList.forEach(function(e) {
+                switch (data) {
+                    case 'sites':
+                        e.style.display = 'block';
+                        if (e.dataset.filter !== 'sites') e.style.display = 'none';
+                    break;
+                    case 'logo':
+                        e.style.display = 'block';
+                        if (e.dataset.filter !== 'logo') e.style.display = 'none';
+                    break;
+                    case 'design':
+                        e.style.display = 'block';
+                        if (e.dataset.filter !== 'design') e.style.display = 'none';
+                    break;
+                    default:
+                        e.style.display = 'block';
                 };
             });
-        };
-    };
-   
-
-    const ul = main.getElementsByClassName("portfolio__list");
-    
-    let list;
-    for (let i = 0; i < ul.length; i++) {
-        list = ul[i];
-    };
-
-    let item = list.querySelectorAll('[data-filter]');
-    const showSites = function() {
-        item.forEach(function(element) {
-            element.style.display = 'block';
-            if (element.dataset.filter !== "sites") element.style.display = 'none';
         });
-    };
-
-    const showLogo = function() {
-        item.forEach(function(element) {
-            element.style.display = 'block';
-            if (element.dataset.filter !== "logo") element.style.display = 'none';
-        });
-    };
-
-    const showDesign = function() {
-        item.forEach(function(element) {
-            element.style.display = 'block';
-            if (element.dataset.filter !== "design") element.style.display = 'none';
-        });
-    };
-
-    const showAll = function() {
-        item.forEach(function(element) {
-            element.style.display = 'block';
-        });
-    };
-    
+    });
 };
 
 filter('portfolio'); // id
