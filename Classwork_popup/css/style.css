@@ -9,18 +9,115 @@ body {
 
     font-family: arial;
     line-height: 24px;
+    color: #2c2b2b;
+    background-color: rgb(184, 184, 184);
 }
 
 h1, h2, ul {
     margin-bottom: 30px;
 }
 
+h2 {
+    color: rgb(17, 93, 121);
+    margin-top: 30px;
+}
+
 p {
     margin-bottom: 20px;
 }
 
+span {
+    cursor: pointer;
+}
+
 hr {
     margin: 20px 0;
+}
+
+.page__upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page__upper_title {
+    text-transform: uppercase;
+}
+
+.page__upper_content {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 10px 60px;
+}
+
+.page__upper_content .biography {
+    text-decoration: underline;
+}
+
+.page__upper_content .biography:hover {
+    color: rgba(44, 43, 43, 0.6);
+}
+
+.image {
+    float: left;
+    margin: 0 20px 30px 20px;
+}
+
+.image-rev {
+    float: right;
+}
+
+.text {
+    clear: both;
+}
+
+.comand li:nth-child(1) {
+    list-style: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.disco li:nth-last-child(1) {
+    list-style: none;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+ul li:nth-last-child(1) a {
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(231, 231, 168);
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+    border: 2px solid rgb(231, 231, 168);
+    border-radius: 8px;
+}
+
+ul li:nth-last-child(1) a:hover {
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+button {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    padding: 5px 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background-color: rgb(174, 174, 174);
+    cursor: pointer;
+}
+
+button:hover {
+    color: #fff;
+    border: 2px solid rgb(238, 1, 124);
 }
 
 .popup {
@@ -57,10 +154,14 @@ hr {
     opacity: 0.6;
     margin-left: auto;
     margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .popup__close:hover {
+    border: 3px solid rgb(238, 1, 124);
     opacity: 1;
+    color: rgb(238, 1, 124);
 }
 
 .popup__content {
@@ -68,7 +169,23 @@ hr {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 50px #000;
-    min-width: 300px;
+    min-width: 400px;
+    background: linear-gradient(136deg, rgb(154, 154, 154), rgb(55, 53, 53));
+    color: #fff;
+}
+
+.popup__content input {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px;
+    width: 90%;
+    outline: none;
+    font-size: 16px;
+}
+
+.popup__content button {
+    background-color: rgb(238, 1, 124);
 }
 
 .popup__content > * {

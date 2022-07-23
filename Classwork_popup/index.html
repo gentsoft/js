@@ -5,64 +5,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classwork popup</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 
-    <h1>Lorem, ipsum dolor.</h1>
+    <div class="page">
+        
+        <div class="page__upper">
 
-    <p>Lorem ipsum dolor, <span data-id="content2" data-popup="content"><b>sit amet consectetur</b></span> adipisicing elit. Nulla labore inventore ut laboriosam. <a href="#">Animi perferendis saepe</a> magni itaque sed similique? Deleniti suscipit nostrum in rerum architecto est voluptate amet enim?</p>
+            <h1 class="page__upper_title">Рок-группа «Nirvana»</h1>
 
-    <h2>Lorem ipsum dolor sit amet.</h2>
+            <p class="page__upper_content">Маленький городок Абердин с населением в 16 тысяч жителей подарил миру новый музыкальный жанр. Жанр звали "гранж" (grunge), а его иконой стал <span class="biography" data-id="content2" data-popup="content"><b>родившийся 20 февраля 1967 года в семье домохозяйки и механика Курт Кобейн</b></span>. Его предки по материнской линии происходили из Германии, а по отцовской - из Ирландии, причем фамилия Cobain являлась искажением ирландского имени Coburn.</p>
 
-    <a data-popup="image" href="https:/via.placeholder.com/800"><img src="https:/via.placeholder.com/200" alt="#" /></a>
+        </div>
+        
 
-    <hr>
-
-    <button data-id="content1" data-popup="content">Feedback form</button>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quas harum minus animi maiores iusto porro ipsum voluptatum a! Sed repellendus quasi officia accusantium est non omnis voluptatum, voluptatem suscipit?</p>
-
-    <ul>
-        <li>Item 1</li>
-        <li><a data-popup="video" href="https://youtu.be/8YJxWV5yPx0">Watch video</a></li>
-        <li>Item 3</li>
-    </ul>
-
-    <p>Consectetur quibusdam, fugiat perferendis quis totam expedita placeat repellat magni cupiditate earum distinctio beatae, qui tempora! Deserunt, voluptatum eaque perferendis laboriosam necessitatibus delectus ullam nemo reiciendis commodi debitis error temporibus.</p>
+        <hr>
 
 
+        <h2>История создания группы</h2>
 
-    <div id="content1" style="display: none; visibility:hidden; opacity: 0; height: 0;">
-        <form>
-            <input type="text" name="name" placeholder="Your name">
-            <hr>
-            <input type="tel" name="phone" placeholder="Your phone">
-            <hr>
-            <button>Send</button>
-        </form>
-    </div>
+        <p>В 1987 году в США появилась новая рок-группа, которая очень быстро стала известной во все мире. «Нирвана» была создана вокалистом Куртом Кобейном и басистом Кристом Новоселичем. Они познакомились 1982 году.</p>
+        
 
-    <div id="content2" style="display: none; visibility:hidden; opacity: 0; height: 0;">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque deleniti laboru
-    </div>
+        <a class="image image-rev" data-popup="image" href="https://rockschool.ru/upload/resize_cache/iblock/a25/547_547_0/a25b10e1578ae715b0d126a903418a1a.jpg"><img src="https://rockschool.ru/upload/resize_cache/iblock/a25/547_547_0/a25b10e1578ae715b0d126a903418a1a.jpg" alt="#" width="300" height="198" /></a>
+
+        <ul class="comand">
+            <li>Состав:</li>
+            <li>Курт Кобейн (Kurt Cobain) - вокал, гитара</li>
+            <li>Крис Новоселич (Chris Novoselic) - бас-гитара</li>
+            <li>Дэйв Грол (Dave Grohl) - барабаны</li>
+        </ul>
+
+        <p class="text">Кобейн говорил, что Грол стал «кем-то наподобие нашего шестого барабанщика» (до прихода в группу он выступал в DAIN BRAMMAGE с Восточного побережья, а до этого в SCREAM, которая записывалась на звукозаписывающей студии Dischord). Первым барабанщиком группы NIRVANA был Чэд Чэннинг, в группу входили также Дэн Питерс и Дж. Массис.</p>
+
+        <hr>
+
+        <h2>Дискография</h2>
+
+        <p>Дискография американской группы Nirvana насчитывает 3 студийных альбома, 2 мини-альбома, 21 сингл, 5 видеоальбомов, 3 концертных альбома, 5 сборников.</p>
+
+        <ul class="disco">
+            <li>Bleach (1989)</li>
+            <li>Nevermind (1991)</li>
+            <li>Incesticide (1992, компиляция с редкими демо-записями)</li>
+            <li>In Utero (1993)</li>
+            <li>MTV Unplugged in NY (1994, акустический концерт)</li>
+            <li><a data-popup="video" href="https://youtu.be/d9iLPs1Tjkc">Greatest Hits Full Album</a></li>
+        </ul>
+
+        <button data-id="content1" data-popup="content">Feedback form</button>
+
+        <hr>
+
+        <h2>Творчество</h2>
+
+        <p>Свой дебютный сингл Love Buzz/Big Cheese NIRVANA записала на сиэтлской звукозаписывающей студии Sub Pop Records. Эта песня уже была спета голландской группой SHOCKING BLUE в 60-е годы.</p>
+        
+
+        <a class="image" data-popup="image" href="https://rockschool.ru/upload/medialibrary/05c/05caab40d7c507593c735445ea8984d9.jpg"><img src="https://rockschool.ru/upload/medialibrary/05c/05caab40d7c507593c735445ea8984d9.jpg" alt="#" width="300" height="198" /></a>
+
+        <p>В 1989 году группа записала свой дебютный альбом Bleach (мрачноватый и явно «панковский»). Перед записью альбома «Bleach» в состав группы был введен второй гитарист Джейсон Эвермен. Он был изображен на обложке альбома, хотя в действительности не играл никакой роли при записи, собираясь уйти в группу MINDFUNK. В данном составе музыканты смогли совместить мелодию с тяжелыми риффами, что помогло группе стать культовой. Однако после европейского турне Чэннинг ушел из группы, а найти ему подходящую замену оказалось непросто. Альбом большого распространения не имел, но группа часто и много концертировала, завоевывая себе все большую популярность. Заметив это, за нее начали борьбу насколько крупных звукозаписывающих компаний.</p>
+
+        <p class="text">Дэн Питерс выступал в группе на временной основе. Он участвовал в создании сингла Sliver (1990). Новый барабанщик Дэвид Грол помог группе заново обрести чувство стабильности. Трио в обновленном составе заключило престижный контракт со студией Geffen Records.</p>
+
+        <p>В 1991 году на студии DGC Nirvana записала свой второй альбом Nevermind, который уже через месяц после выпуска удостоился платинового диска. Благодаря этому альбому группа стала знаменитой, а по миру покатилась волна «нирваномании».</p>
+        
+
+        <a class="image image-rev" data-popup="image" href="https://rockschool.ru/upload/medialibrary/869/86995f2d7f7a665ff949c0b506a5d7c5.jpg"><img src="https://rockschool.ru/upload/medialibrary/869/86995f2d7f7a665ff949c0b506a5d7c5.jpg" alt="#" width="300" height="198" /></a>
+
+        <p>Nevermind ознаменовал собой укрепление нового стиля альтернативной музыки — грандж. Песни из Nevermind значительно отличались от стандартого исполнительского формата, медленные по ритму куплеты менялись в них быстрыми припевами, контрастно; композиции, яростные и депрессивные в одно и тоже время, характеризовались смешанным «хардово-панковским» саундом. В 1992 году альбом возглавил американские хит-парады и затмил широко разрекламированные альбомы Майкла Джексона и группы Dire Straits. Заглавная дорожка Smells Like Teen Spirit вошла в десятку лучших песен британского хит-парада, еще раз подтвердив, что NIRVANA получила одобрение как музыкальных критиков, так и слушателей.</p>
+
+        <p class="text">В начале 1992 года романтическая связь между Кобейном и Кортни Лав (солисткой группы HOLE) завершилась браком (Лав родила дочь Фрэнсис Бин). В журнале «Vanity Fair» утверждалось, что во время беременности Лав принимала наркотики. Это привело к ходатайству от имени ребенка запретить супругам находиться наедине с ребенком в течение первого месяца. В этот период пресса часто рассуждала о трудностях при записи следующего альбома, а также об употреблении Кобейном различных наркотиков, которые требовались ему, чтобы заглушить боли в желудке. Тем не менее записанный в этот период альбом In Utero (1993), продюсером которого был Стивен Альбини имел не меньший успех, чем Nevermind, вновь покорив вершины как британского, так и американского хит-парадов; осталась на высоком уровне и поэзия песен Кобейна. Лирика песен Кобейна оставалась на высоте — Penny Royal Tea, All Apologies и вызывающая Rape Me.</p>
+        
+
+        <a class="image" data-popup="image" href="https://rockschool.ru/upload/medialibrary/719/719fe63eaa2e131e400355495fedcea5.jpg"><img src="https://rockschool.ru/upload/medialibrary/719/719fe63eaa2e131e400355495fedcea5.jpg" alt="#" width="300" height="198" /></a>
+
+        <p>В 1994 году процесс деградации и саморазрушения лидера группы усилился — в марте, находясь в Италии, Курт впал в кому после нескольких неудачных попыток самоубийства. Он был доставлен в американский госпиталь в Риме, где его буквально вернули с того света. Затем Кобейна поместили в реабилитационный центр в Калифорнии, из которого он сбежал. 5 апреля прогремел роковой выстрел; Кобейн покончил собой в Сиэтле, процитировав в своей предсмертной записке Нейла Янга: «Лучше мгновенная смерть, чем медленное угасание». Группа распалась.</p>
+
+        <hr class="text">
+
+        <h2>Группа NIRVANA после смерти Курта</h2>
+
+        <p>После ухода Кобейна группа прекратила свое существование, однако Крист и Дэйв не оставили любимое дело и продолжили заниматься музыкой. Грол организовал довольно успешный коллектив Foo Fighters, играл на ударных в других группах.</p>
+
+        <p>Творческая карьера Новоселича сложилась менее успешно, он тоже пытался создать собственный коллектив «Sweet 75», но вскоре отказался от этой затеи и занялся общественной деятельностью.</p>
+
+        <p>В конце 2012 года бывшие участники «Нирваны» снова встретились на благотворительном концерте Пола Маккартни, выступив в поддержку жертв урагана «Сэнди».</p>
+
+        <div id="content1" style="display: none; visibility:hidden; opacity: 0; height: 0;">
+            <form>
+                <input type="text" name="name" placeholder="Your name">
+                <hr>
+                <input type="tel" name="phone" placeholder="Your phone">
+                <hr>
+                <button>Send</button>
+            </form>
+        </div>
+
+        <div id="content2" style="display: none; visibility:hidden; opacity: 0; height: 0;">
+            Маленький городок Абердин с населением в 16 тысяч жителей подарил миру новый музыкальный жанр. Жанр звали "гранж" (grunge), а его иконой стал родившийся 20 февраля 1967 года в семье домохозяйки и механика Курт Кобейн. Его предки по материнской линии происходили из Германии, а по отцовской - из Ирландии, причем фамилия Cobain являлась искажением ирландского имени Coburn.
+
+            Курт с детства был окружен музыкантами: его дядя Чак играл в рок-группе, его тетя Мэри играла на гитаре, в семье было принято устраивать домашние концерты и спектакли. Мальчик с детства слушал Beatles и Monkees, однако, начав играть собственную музыку, взял курс на дргие образцы: Aerosmith, Led Zeppelin, Black Sabbath и KISS. После развода родителей Кобейн нашел утешение в творчестве - но уже тогда и его рисунки, и музыка носили экстремальный характер. Грязный, жесткий, протестный…  
+        </div>
 
 
-    <!-- <div class="popup">
-        <div class="popup__wrapper">
+        <!-- <div class="popup">
+            <div class="popup__wrapper">
 
-            <button class="popup__close">X</button>
-            <div class="popup__content">
+                <button class="popup__close">X</button>
+                <div class="popup__content">
 
                 Lorem, ipsum.
 
-            </div>
+                </div>
 
-        </div>
-    </div> -->
+            </div>
+        </div> -->
+
+    </div>
 
     
-    <script src="/scripts/script.js"></script>
+    <script src="scripts/script.js"></script>
 
 </body>
 </html>
