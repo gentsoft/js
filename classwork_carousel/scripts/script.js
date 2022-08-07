@@ -9,47 +9,55 @@ const slider = function(opt) {
     const btnLeft = document.querySelector('#' + opt.btns.left);
     const btnRight = document.querySelector('#' + opt.btns.right);
 
+    const bulletList = document.querySelectorAll('.bullet__item');
+    
+    const bullet1 = document.querySelector('#' + opt.bullets.n1);
+    const bullet2 = document.querySelector('#' + opt.bullets.n2);
+    const bullet3 = document.querySelector('#' + opt.bullets.n3);
+    const bullet4 = document.querySelector('#' + opt.bullets.n4);
+
     if (!btnLeft || !btnRight) return;
 
-    const prev = function() {
-        
-        let x = listElem.style.transform;
+    let newListElem;
 
-        if (!x) {
-            x = 0;
-        } else {
-            x = x.replace('translateX(', '');
-            x = x.replace('%)', '');
-            x = Math.abs(x);
-        }
+    let parent = document.querySelector('.slider__list');
+    const images = parent.querySelectorAll('img');
 
-        x -= 100;
+    let imagesArr = [];
+    images.forEach(function(elem) {
+        let src = elem.getAttribute('src');
+        elem = src.replace('images/', '');
+        imagesArr.push(elem);
+    })
 
-        listElem.style.transform = `translateX(-${x}%)`;
+    const reset = function() {
 
-    };
+        listElem.style.transform = `translateX(0%)`;
+        x = 0;
+    }
 
-    const next = function() {
-        let x = listElem.style.transform;
+    const elemAfter = function(x) {
 
-        if (!x) {
-            x = 0;
-        } else {
-            x = x.replace('translateX(', '');
-            x = x.replace('%)', '');
-            x = Math.abs(x);
-        }
+        newListElem = document.createElement('div');
+        newListElem.classList.add('slider__item');
 
-        x += 100;
+        let image = imagesArr.shift();
 
-        const stopPoint = (listElem.children.length - 1) * 100;
+        let img = document.createElement('img');
+        img.setAttribute('src', `images/${image}`);
+        newListElem.setAttribute('id', 'new');
+        // console.log(x)
 
-        if (x <= stopPoint) listElem.style.transform = `translateX(-${x}%)`;
+        newListElem.append(img);
+        parent.append(newListElem);
+
+        if (x == 400) reset();
     }
 
     const prevNext = function() {
-        let x = listElem.style.transform;
 
+        let x = listElem.style.transform;
+        
         if (!x) {
             x = 0;
         } else {
@@ -57,17 +65,82 @@ const slider = function(opt) {
             x = x.replace('%)', '');
             x = Math.abs(x);
         }
+        console.log(x)
         
         const dir = (this == btnLeft) ? 'prev' : 'next';
 
-        x += 100 * (dir == 'prev' ? -1 : 1);
+        x += 20 * (dir == 'prev' ? -1 : 1);
 
-        const stopPoint = (listElem.children.length - 1) * 100;
+        let stopPoint = (listElem.children.length - 1) * 20;
+        if (stopPoint > 380) stopPoint = 380;
+        
+        console.log(stopPoint)
 
         if (x <= stopPoint) listElem.style.transform = `translateX(-${x}%)`;
-        else if (x > stopPoint) listElem.style.transform = `translateX(0%)`;
+        if (x > (stopPoint - 100)) elemAfter(x);
         
-        if (dir == 'prev' && x < 0) listElem.style.transform = `translateX(-${stopPoint}%)`;
+        if (dir == 'prev' && x <= 0) listElem.style.transform = `translateX(-${stopPoint}%)`;
+
+        autoSlide();
+
+        if (x >= 100 && x < 200) {
+            bulletList.forEach(function(item) {
+                item.classList.remove('active');
+            })
+            bullet2.classList.add('active');
+        } else if (x >= 200 && x < 300) {
+            bulletList.forEach(function(item) {
+                item.classList.remove('active');
+            })
+            bullet3.classList.add('active');
+        } else if (x >= 300 && x < 400) {
+            bulletList.forEach(function(item) {
+                item.classList.remove('active');
+            })
+            bullet4.classList.add('active');
+        } else if (x >= 400 || x == 0) {
+            bulletList.forEach(function(item) {
+                item.classList.remove('active');
+            })
+            bullet1.classList.add('active');
+        }
+    };
+
+
+    const bulletFirst = function() {
+
+        listElem.style.transform = 'translateX(0%)';
+        bulletList.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        this.classList.toggle('active');
+    };
+
+    const bulletSecond = function() {
+
+        listElem.style.transform = 'translateX(-100%)';
+        bulletList.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        this.classList.toggle('active');
+    };
+
+    const bulletThird = function() {
+
+        listElem.style.transform = 'translateX(-200%)';
+        bulletList.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        this.classList.toggle('active');
+    };
+
+    const bulletForth = function() {
+
+        listElem.style.transform = 'translateX(-300%)';
+        bulletList.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        this.classList.toggle('active');
     };
 
     // btnLeft.addEventListener('click', prev);
@@ -76,6 +149,18 @@ const slider = function(opt) {
     btnLeft.addEventListener('click', prevNext);
     btnRight.addEventListener('click', prevNext);
 
+    bullet1.addEventListener('click', bulletFirst);
+    bullet2.addEventListener('click', bulletSecond);
+    bullet3.addEventListener('click', bulletThird);
+    bullet4.addEventListener('click', bulletForth);
+
+    let time;
+
+    const autoSlide = function() {
+        time = setTimeout(prevNext, 3000)
+    }
+
+    autoSlide();
 };
 
 window.addEventListener('load', function() {
@@ -85,6 +170,12 @@ window.addEventListener('load', function() {
         btns: {
             left: 'slider1_btn_left',
             right: 'slider1_btn_right'
+        },
+        bullets: {
+            n1: 'bullet_1',
+            n2: 'bullet_2',
+            n3: 'bullet_3',
+            n4: 'bullet_4'
         }
     };
 

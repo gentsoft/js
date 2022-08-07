@@ -31,13 +31,13 @@ body {
 
 .slider__list {
     display: flex;
-
-    transition: transform 1s ease-in-out;
+    transition: all 1s ease 0s;
 }
 
 .slider__item {
     flex: none;
-    width: 100%;
+    width: 20%;
+    height: 200px;
 }
 
 .slider__item > img {
@@ -57,7 +57,7 @@ body {
     cursor: pointer;
 
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
@@ -71,9 +71,38 @@ body {
 }
 
 .slider__btn span {
-    vertical-align: 15px;
+    vertical-align: 30px;
 }
 
 .slider__btn:hover {
     box-shadow: 0 0 10px #999;
+}
+
+.slider__bullets {
+    width: 250px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bullet__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bullet__wrapper .active {
+    background-color: rgb(241, 65, 80);
+}
+
+.bullet__item {
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.bullet__item:hover {
+    background-color: rgb(241, 65, 80);
 }
