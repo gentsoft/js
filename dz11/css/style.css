@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial;
+    background-color: #eee;
+    padding: 2%;
+}
+
+.contacts {
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.contacts__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.contacts__form input {
+    border: 0;
+    outline: 0;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px #666;
+}
+
+.contacts__list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3%;
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+    max-width: 300px;
+    max-height: 200px;
+    margin-top: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px #999;
+    /* overflow-y: scroll; */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.contact:hover {
+    color: rgb(86, 87, 92);
+    box-shadow: 5px 5px 10px #666;
+}
+
+.contact .contact__item {
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.contact .contact__item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.contact__remove {
+    font-size: 22px;
+    line-height: 17px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ededed;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    transform: rotate(45deg);
+    z-index: 1;
+    cursor: pointer;
+    background-color: #999;
+    color: #fff;
+    transition: all 0.3s ease;
+
+}
+
+.contact__remove:hover {
+    width: 23px;
+    height: 23px;
+    font-size: 24px;
+    line-height: 18px;
+    background-color: #666;
+    color: #fff;
+    top: -6px;
+    right: -6px;
+}
